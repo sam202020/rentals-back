@@ -40,15 +40,43 @@ const handleError = err => {
 // test route
 server.get('/', (req, res) => res.send(`The server is up and running!`));
 
+server.get('/rentals', (req, res) => {
+    Rental.find({})
+        .then(response => res.json(response))
+        .catch(err => res.status(500).json(err.message));
+});
 
-server.put('/', (req, res) => {
-    const { location, type, bedroom, baths, wePay, phone, price, comments, imageURL } = req.body;
-    const newRental = new Rental({ location, type, bedroom, baths, wePay, phone, price, comments, imageURL });
-    newRental.save(function (err) {
-        if (err) return handleError(err);
-      })
-    .then(result => res.json(result))
-    .catch(err => handleError(err));
+
+server.post('/', (req, res) => {
+    console.log(req.body)
+    const {
+        location,
+        type,
+        bedrooms,
+        baths,
+        wePay,
+        phone,
+        price,
+        comments,
+        imageURL,
+        email,
+        hud?
+    } = req.body;
+    const newRental = new Rental({
+        email,
+        location,
+        type,
+        bedrooms,
+        baths,
+        wePay,
+        phone,
+        price,
+        comments,
+        imageURL
+    });
+    newRental.save()
+        .then(result => res.json(result))
+        .catch(err => console.error(err))
 });
 
 

@@ -19,11 +19,13 @@ const RentalModel = mongoose.Schema({
         required: true,
     },
     wePay: {
-        type: String
+        type: Array
     },
     phone:  {
         type: Number,
-        required: true, 
+    },
+    email: {
+        type: String
     },
     price: {
         type: Number,
@@ -33,10 +35,14 @@ const RentalModel = mongoose.Schema({
         type: String
     },
     imageURL: {
-        type: String
+        type: Array
     }, 
     createOn: {
-        type: String
+        type: Date,
+        default: Date.now()
+    },
+    hud?: {
+        type: Boolean
     }
 });
 
