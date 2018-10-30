@@ -20,7 +20,7 @@ mongoose.set('useCreateIndex', true); // collection.ensureIndex is also deprecat
 
 
 // connecting to the database
-mongoose.connect('mongodb://localhost:27017/rentals', databaseOptions);
+mongoose.connect(process.env.MONGO_URI, databaseOptions);
 mongoose.connection
     .once('open', () => console.log(`The database is connected`))
     .on('error', (err) => console.warn(err));
@@ -42,7 +42,10 @@ server.get('/', (req, res) => res.send(`The server is up and running!`));
 
 server.get('/rentals', (req, res) => {
     Rental.find({})
-        .then(response => res.json(response))
+        .then(response => { 
+            console.log(response);
+            res.json(response);
+        })
         .catch(err => res.status(500).json(err.message));
 });
 
@@ -60,7 +63,7 @@ server.post('/', (req, res) => {
         comments,
         imageURL,
         email,
-        hud?
+        hud
     } = req.body;
     const newRental = new Rental({
         email,
