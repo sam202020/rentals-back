@@ -43,6 +43,9 @@ const RentalModel = mongoose.Schema({
     },
     hud: {
         type: Boolean
+    },
+    address: {
+        type: Object,
     }
 });
 
