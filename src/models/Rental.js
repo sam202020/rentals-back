@@ -28,13 +28,12 @@ const RentalModel = mongoose.Schema({
         type: String
     },
     price: {
-        type: Number,
-        required: true, 
+        type: Number
     },
     comments: {
         type: String
     },
-    imageURL: {
+    pictures: {
         type: Array
     }, 
     createOn: {
