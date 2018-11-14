@@ -9,14 +9,16 @@ const stripe = require("stripe")(process.env.STRIPE_KEY_SECRET);
 const deployeduri = process.env.DEPLOYED_URI;
 const localuri = process.env.LOCAL_URI;
 
-const whitelist = [deployeduri, localuri]
-const corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
+const whitelist = [deployeduri, localuri];
+const corsOptionsDelegate = function (req, callback) {
+  let corsOptions;
+  if (whitelist.indexOf(req.header('Origin')) !== -1) {
+    corsOptions = {
+      origin: true
+    } // reflect (enable) the requested origin in the CORS response
+    callback(null, corsOptions) // callback expects two parameters: error and options
+  } else {
+    callback(new Error('Not allowed by CORS'))
   }
 }
 
@@ -33,7 +35,7 @@ const server = express();
 server.use(helmet());
 server.use(compression());
 server.use(express.json());
-server.use(cors(corsOptions));
+server.use(cors(corsOptionsDelegate));
 
 // configuring the database
 mongoose.Promise = global.Promise;
