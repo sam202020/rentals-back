@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { ObjectId } = mongoose.Schema;
 
 const RentalModel = mongoose.Schema({
     location: {
@@ -45,6 +44,9 @@ const RentalModel = mongoose.Schema({
     },
     address: {
         type: Object,
+    },
+    user: {
+        type: String
     }
 });
 
