@@ -17,7 +17,9 @@ const UserModel = mongoose.Schema({
     createOn: {
         type: Date,
         default: Date.now()
-    }
+    },
+    messagesTo: [{ type: UserModel, ref: 'ReviewModel' }],
+    messagesFrom: [{ type: UserModel, ref: 'ReviewModel' }],
 });
 
 module.exports = mongoose.model('users', UserModel);

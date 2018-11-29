@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 const RentalModel = mongoose.Schema({
-    location: {
+    place: {
         type: String,
         required: true,
     },

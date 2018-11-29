@@ -250,7 +250,7 @@ server.post("/", verifyUser, (req, res, next) => {
         user,
         address,
         email,
-        location,
+        place: location,   // to avoid conflict with react-router props
         type,
         bedrooms,
         baths,
