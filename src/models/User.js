@@ -1,5 +1,4 @@
 const mongoose = require('mongoose');
-const { ObjectId } = mongoose.Schema;
 
 const UserModel = mongoose.Schema({
     _id: {
@@ -18,8 +17,6 @@ const UserModel = mongoose.Schema({
         type: Date,
         default: Date.now()
     },
-    messagesTo: [{ type: ObjectId, ref: 'ReviewModel' }],
-    messagesFrom: [{ type: ObjectId, ref: 'ReviewModel' }],
 });
 
 module.exports = mongoose.model('users', UserModel);

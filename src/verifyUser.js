@@ -19,8 +19,8 @@ const verifyUser = (req, res, next) => {
     }
     admin.auth().verifyIdToken(idToken)
         .then(function (decodedToken) {
-            const uid = decodedToken.uid;
-            req.user = uid;
+            req.uid = decodedToken.uid;
+            req.name = decodedToken.name;
             next();
         }).catch(function (error) {
             console.error(error);

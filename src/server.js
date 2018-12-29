@@ -3,10 +3,11 @@ const mongoose = require("mongoose");
 const compression = require("compression");
 const helmet = require("helmet");
 const cors = require("cors");
-require("dotenv").config();
 const stripe = require("stripe")(process.env.STRIPE_KEY_SECRET);
 
 const userRouter = require("./userRouter");
+const chatRouter = require("./chatRouter");
+
 const verifyUser = require("./verifyUser");
 
 const deployeduri = process.env.DEPLOYED_URI;
@@ -42,10 +43,14 @@ server.use(express.json());
 server.use(cors());
 
 server.use("/user", userRouter); // router for handling auth related requests, such as login and register
+server.use('/chat', chatRouter);
 
 // express error handling:
 server.use(function (err, req, res, next) {
-  res.status(500).send(err.message);
+  if (res.headersSent) {
+    return next(err)
+  }
+  res.status(500).json(err);
 });
 
 // configuring the database
@@ -184,7 +189,7 @@ server.post("/:id", verifyUser, (req, res, next) => {
 server.get("/:id", verifyUser, (req, res, next) => {
   Rental.findById(req.params.id)
     .then(result => {
-      if (req.user === result.user) res.status(200).json(result);
+      if (req.uid === result.user) res.status(200).json(result);
       else res.status(404).json({
         err: 'unauthorized'
       });
@@ -195,7 +200,7 @@ server.get("/:id", verifyUser, (req, res, next) => {
 server.put("/:id", verifyUser, (req, res, next) => {
   Rental.findByIdAndUpdate(req.params.id, req.body)
     .then(result => {
-      if (req.user === result.user) res.status(200).json(result);
+      if (req.uid === result.user) res.status(200).json(result);
       else res.status(404).json({
         err: 'unauthorized'
       });
@@ -207,7 +212,7 @@ server.put("/:id", verifyUser, (req, res, next) => {
 // adds rental to db, with lat and long data for rental location via google maps api
 server.post("/", verifyUser, (req, res, next) => {
   let rentalToReturn;
-  const user = req.user;
+  const user = req.uid;
   const {
     location,
     type,
@@ -250,7 +255,7 @@ server.post("/", verifyUser, (req, res, next) => {
         user,
         address,
         email,
-        place: location,   // to avoid conflict with react-router props
+        place: location, // to avoid conflict with react-router props
         type,
         bedrooms,
         baths,
