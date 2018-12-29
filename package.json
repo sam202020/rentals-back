@@ -19,7 +19,6 @@
     "mongoose": "^5.3.6",
     "nodemailer": "^5.0.0",
     "nodemon": "^1.18.4",
-    "sendmail": "^1.4.1",
     "stripe": "^6.12.1",
     "twilio": "^3.25.0"
   }
