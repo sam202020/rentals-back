@@ -5,12 +5,9 @@ var transporter = nodemailer.createTransport({
     service: 'gmail',
     auth: {
         user: 'shalomlandsman@gmail.com',
-        pass: 'azarya2016'
+        pass: 'azarya2020'
     }
 });
-
-
-
 
 const RentalModel = mongoose.Schema({
     place: {
