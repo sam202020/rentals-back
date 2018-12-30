@@ -477,6 +477,11 @@ balanced-match@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/balanced-match/-/balanced-match-1.0.0.tgz#89b4d199ab2bee49de164ea02b89ce462d71b767"
 
+base64-js@^1.0.2, base64-js@^1.3.0:
+  version "1.3.0"
+  resolved "https://registry.yarnpkg.com/base64-js/-/base64-js-1.3.0.tgz#cab1e6118f051095e58b5281aea8c1cd22bfc0e3"
+  integrity sha512-ccav/yGvoa80BQDljCxsmmQ3Xvx60/UpBIij5QN21W3wBi/hhIC9OoO+KLpu9IJTS9j4DRVJ3aDDF9cMSoa2lw==
+
 base@^0.11.1:
   version "0.11.2"
   resolved "https://registry.yarnpkg.com/base/-/base-0.11.2.tgz#7bde5ced145b6d551a90db87f83c558b4eb48a8f"
@@ -553,6 +558,14 @@ braces@^2.3.0, braces@^2.3.1:
     split-string "^3.0.2"
     to-regex "^3.0.1"
 
+bson@4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/bson/-/bson-4.0.0.tgz#7684b512e9ae59fe3518ff2b35ec0c9741bf9f57"
+  integrity sha512-303qcGsM1cosFi2xYlHViuGTHpC+gDf59aWcxB+/GZY4skzXG6ta2mw6OPlBOA4mtOyZJMvgp4IWdbmXs4tKpw==
+  dependencies:
+    buffer "^5.1.0"
+    long "^4.0.0"
+
 bson@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/bson/-/bson-1.1.0.tgz#bee57d1fb6a87713471af4e32bcae36de814b5b0"
@@ -569,6 +582,14 @@ buffer-from@^1.0.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/buffer-from/-/buffer-from-1.1.1.tgz#32713bc028f75c02fdb710d7c7bcec1f2c6070ef"
   integrity sha512-MQcXEUbCKtEo7bhqEs6560Hyd4XaovZlO/k9V3hjVUF/zwW7KBVdSK4gIt/bzwS9MbR5qob+F5jusZsb0YQK2A==
+
+buffer@^5.1.0:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/buffer/-/buffer-5.2.1.tgz#dd57fa0f109ac59c602479044dca7b8b3d0b71d6"
+  integrity sha512-c+Ko0loDaFfuPWiL02ls9Xd3GO3cPVmUobQ6t3rXNUk304u6hGq+8N/kFi+QEIKhzK3uwolVhLzszmfLmMLnqg==
+  dependencies:
+    base64-js "^1.0.2"
+    ieee754 "^1.1.4"
 
 bun@^0.0.12:
   version "0.0.12"
@@ -808,6 +829,14 @@ create-error-class@^3.0.0, create-error-class@^3.0.2:
   dependencies:
     capture-stack-trace "^1.0.0"
 
+cross-fetch@^2.2.3:
+  version "2.2.3"
+  resolved "https://registry.yarnpkg.com/cross-fetch/-/cross-fetch-2.2.3.tgz#e8a0b3c54598136e037f8650f8e823ccdfac198e"
+  integrity sha512-PrWWNH3yL2NYIb/7WF/5vFG3DCQiXDOVf8k3ijatbrtnwNuhMWLC7YF7uqf53tbTFDzHIUD8oITw4Bxt8ST3Nw==
+  dependencies:
+    node-fetch "2.1.2"
+    whatwg-fetch "2.0.4"
+
 cross-spawn@^5.0.1:
   version "5.1.0"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
@@ -907,6 +936,11 @@ deprecate@1.0.0:
 destroy@~1.0.4:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/destroy/-/destroy-1.0.4.tgz#978857442c44749e4206613e37946205826abd80"
+
+detect-browser@^3.0.0:
+  version "3.0.1"
+  resolved "https://registry.yarnpkg.com/detect-browser/-/detect-browser-3.0.1.tgz#39beead014347a8a2be1f3c4cb30a0aef2127c44"
+  integrity sha512-L6b76EfUxnoxGHM5Vz7nrshQPIbOHtitDWpGufrp5srQdJrEYi1xpUVZeFbfssWAJvUWo/iDIVlz8hOP4Z8OCw==
 
 detect-libc@^1.0.2:
   version "1.0.3"
@@ -1594,6 +1628,11 @@ iconv-lite@^0.4.4:
   dependencies:
     safer-buffer ">= 2.1.2 < 3"
 
+ieee754@^1.1.4:
+  version "1.1.12"
+  resolved "https://registry.yarnpkg.com/ieee754/-/ieee754-1.1.12.tgz#50bf24e5b9c8bb98af4964c941cdb0918da7b60b"
+  integrity sha512-GguP+DRY+pJ3soyIiGPTvdiVXjZ+DbXOxGpXn3eMvNW4x4irjqXm4wHKscC+TfxSJ0yw/S1F24tqdMNsMZTiLA==
+
 ienoopen@1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/ienoopen/-/ienoopen-1.0.0.tgz#346a428f474aac8f50cf3784ea2d0f16f62bda6b"
@@ -2156,6 +2195,48 @@ mongodb-core@3.1.5:
   optionalDependencies:
     saslprep "^1.0.0"
 
+mongodb-stitch-browser-core@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-browser-core/-/mongodb-stitch-browser-core-4.1.2.tgz#e4d50df87e828d671f7aafb9a60641e7b218bd99"
+  integrity sha512-eFjTxhjPoWANkJ/FUMPoFJjrZ0h4H5+8zv3YcLIF3cmo6kXruMzopipCB4zb3P5ZC2ua4aA8HwWo0Ai3m2IM1A==
+  dependencies:
+    bson "4.0.0"
+    detect-browser "^3.0.0"
+    mongodb-stitch-core-sdk "^4.1.2"
+
+mongodb-stitch-browser-sdk@^4.1.1:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-browser-sdk/-/mongodb-stitch-browser-sdk-4.1.2.tgz#4a76b61c14d34a304971107d0b84c1f4253783cd"
+  integrity sha512-oDxmkNeRiw5wQKB1skgDI7g/BIj4sz29TgoW1uc0y5jX9FaN/tLDXMOcEz+sognqnXBRflaB/VsfdRkdcGIAjA==
+  dependencies:
+    mongodb-stitch-browser-core "^4.1.2"
+    mongodb-stitch-browser-services-mongodb-remote "^4.1.2"
+
+mongodb-stitch-browser-services-mongodb-remote@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-browser-services-mongodb-remote/-/mongodb-stitch-browser-services-mongodb-remote-4.1.2.tgz#3ba48afe0283a1cf1a0bf2a3fa31a80e83da076b"
+  integrity sha512-ipEEUMoICpGq1j7OSqho3bD43/Y10rJiHMPmp0RGxmxpawsR96n9kLPpxd+3OzuWhVCoY6SwLAOFPvKfvTreuQ==
+  dependencies:
+    mongodb-stitch-browser-core "^4.1.2"
+    mongodb-stitch-core-services-mongodb-remote "^4.1.2"
+
+mongodb-stitch-core-sdk@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-core-sdk/-/mongodb-stitch-core-sdk-4.1.2.tgz#48983113e9de1d85fe07be0c58109c1ce67d5ea4"
+  integrity sha512-BlFm67KlFMYaIZJNQ9y6JkdUM0XvADkFaAr+xvH3B55fbZMcNuQqD2atwP0C0Qsv2aHmJ9hMfOdA0xkwcL/cRw==
+  dependencies:
+    base64-js "^1.3.0"
+    bson "4.0.0"
+    cross-fetch "^2.2.3"
+
+mongodb-stitch-core-services-mongodb-remote@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/mongodb-stitch-core-services-mongodb-remote/-/mongodb-stitch-core-services-mongodb-remote-4.1.2.tgz#368a352bf91df0ab80660bcf5e68c272d52034c2"
+  integrity sha512-+9Z04n6k2IhBDg8grsBzSoErN/tBWb8F/aX+65o5oRD868e76ZUZZoWk5dw1P0laV2t3aBN2LVbyBDOZ//9mYw==
+  dependencies:
+    bson "4.0.0"
+    mongodb-stitch-core-sdk "^4.1.2"
+
 mongodb@3.1.6:
   version "3.1.6"
   resolved "https://registry.yarnpkg.com/mongodb/-/mongodb-3.1.6.tgz#6054641973b5bf5b5ae1c67dcbcf8fa88280273d"
@@ -2242,6 +2323,11 @@ negotiator@0.6.1:
 nocache@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/nocache/-/nocache-2.0.0.tgz#202b48021a0c4cbde2df80de15a17443c8b43980"
+
+node-fetch@2.1.2:
+  version "2.1.2"
+  resolved "https://registry.yarnpkg.com/node-fetch/-/node-fetch-2.1.2.tgz#ab884e8e7e57e38a944753cec706f788d1768bb5"
+  integrity sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
 
 node-forge@0.7.4:
   version "0.7.4"
@@ -3328,6 +3414,11 @@ websocket-extensions@>=0.1.1:
   version "0.1.3"
   resolved "https://registry.yarnpkg.com/websocket-extensions/-/websocket-extensions-0.1.3.tgz#5d2ff22977003ec687a4b87073dfbbac146ccf29"
   integrity sha512-nqHUnMXmBzT0w570r2JpJxfiSD1IzoI+HGVdd3aZ0yNi3ngvQ4jv1dtHt5VGxfI2yj5yqImPhOK4vmIh2xMbGg==
+
+whatwg-fetch@2.0.4:
+  version "2.0.4"
+  resolved "https://registry.yarnpkg.com/whatwg-fetch/-/whatwg-fetch-2.0.4.tgz#dde6a5df315f9d39991aa17621853d720b85566f"
+  integrity sha512-dcQ1GWpOD/eEQ97k66aiEVpNnapVj90/+R+SXTPYGHpYBBypfKJEQjLrvMZ7YXbKm21gXd4NcuxUTjiv1YtLng==
 
 which@^1.2.9:
   version "1.3.1"
