@@ -172,7 +172,6 @@ server.post("/geometry", (req, res, next) => {
         lat: lat,
         lng: lng
       };
-      console.log(address);
       res.json(address);
     })
     .catch(next);

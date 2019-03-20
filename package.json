@@ -10,6 +10,7 @@
   "dependencies": {
     "@google/maps": "^0.5.5",
     "axios": "^0.18.0",
+    "cheerio": "^1.0.0-rc.2",
     "compression": "^1.7.3",
     "cors": "^2.8.4",
     "dotenv": "^6.1.0",
@@ -20,6 +21,8 @@
     "mongoose": "^5.3.6",
     "nodemailer": "^5.0.0",
     "nodemon": "^1.18.4",
+    "request": "^2.88.0",
+    "request-promise": "^4.2.4",
     "stripe": "^6.12.1",
     "twilio": "^3.25.0"
   }
