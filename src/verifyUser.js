@@ -1,10 +1,11 @@
 const admin = require("firebase-admin");
+require('dotenv').load();
 
 const serviceAccount = {
   type: "service_account",
   project_id: "lakewood-rentals",
   private_key_id: process.env.PRIVATE_KEY_ID,
-  private_key: process.env.PRIVATE_KEY,
+  private_key: process.env.PRIVATE_KEY.replace(/\\n/g, '\n'),
   client_email:
     "firebase-adminsdk-dozta@lakewood-rentals.iam.gserviceaccount.com",
   client_id: process.env.CLIENT_ID,

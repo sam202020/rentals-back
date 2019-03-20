@@ -1,4 +1,5 @@
 const express = require("express");
+require('dotenv').load();
 const UserModel = require("./models/User");
 const RentalModel = require("./models/Rental");
 const verifyUser = require("./verifyUser");
