@@ -1,0 +1,143 @@
+[{
+  "type": "apartment",
+  "place": "Hampshire Crossing",
+  "price": "$1,395 - 1,950",
+  "bedrooms": "1-2",
+  "phone": "609-301-5225"
+},
+{
+  "type": "apartment",
+  "place": "Washington Square Apartments",
+  "price": "$1,250 - 1,600",
+  "bedrooms": "1-3",
+  "phone": "844-846-3834"
+},
+{
+  "type": "apartment",
+  "place": "New Hampshire Commons",
+  "price": "$1,295 - 1,490",
+  "bedrooms": "1-2",
+  "phone": "866-764-2543"
+},
+{
+  "type": "apartment",
+  "place": "Ocean Park Village",
+  "price": "$1,150 - 1,660",
+  "bedrooms": "1-3",
+  "phone": "844-792-2395"
+},
+{
+  "type": "apartment",
+  "place": "Fairway Villas",
+  "price": "$1,145 - 1,450",
+  "bedrooms": "1-2",
+  "phone": "732-719-4129"
+},
+{
+  "type": "apartment",
+  "place": "Dutchtown Manor Apartments",
+  "price": "$1,250 - 1,575",
+  "bedrooms": "1-2",
+  "phone": "844-365-1947"
+},
+{
+  "type": "apartment",
+  "place": "Clifton Arms",
+  "price": "Call for Rent",
+  "bedrooms": "1-2",
+  "phone": "844-219-6320"
+},
+{
+  "type": "apartment",
+  "place": "Amber Grove Apartments",
+  "price": "$1,350 - 1,450",
+  "bedrooms": "2",
+  "phone": "732-523-2456"
+},
+{
+  "type": "apartment",
+  "place": "Andrews Corner",
+  "price": "$1,180 - 1,505",
+  "bedrooms": "1-2",
+  "phone": "844-598-1593"
+},
+{
+  "type": "apartment",
+  "place": "96 Dr Martin Luther King Dr Unit B",
+  "price": "$1,200",
+  "bedrooms": "2",
+  "phone": "609-250-0142"
+},
+{
+  "type": "apartment",
+  "place": "120 Dr Martin Luther King Dr Unit 120",
+  "price": "$1,021",
+  "bedrooms": "1",
+  "phone": "732-451-4556"
+},
+{
+  "type": "apartment",
+  "place": "236 Sophee Ln",
+  "price": "$1,300",
+  "bedrooms": ""
+},
+{
+  "type": "apartment",
+  "place": "61F Buckingham Dr",
+  "price": "$1,400",
+  "bedrooms": ""
+},
+{
+  "type": "apartment",
+  "place": "94C Edinburgh Ln",
+  "price": "$1,050",
+  "bedrooms": ""
+},
+{
+  "type": "apartment",
+  "place": "535 Sophee Ln",
+  "price": "$1,300",
+  "bedrooms": ""
+},
+{
+  "type": "apartment",
+  "place": "1172D Clydebank Ct",
+  "price": "$1,050",
+  "bedrooms": ""
+},
+{
+  "type": "apartment",
+  "place": "67D Dorchester Dr",
+  "price": "$1,300",
+  "bedrooms": ""
+},
+{
+  "type": "apartment",
+  "place": "431B Picardy Ct",
+  "price": "$1,000",
+  "bedrooms": ""
+},
+{
+  "type": "apartment",
+  "place": "135 Sophee Ln",
+  "price": "$1,250",
+  "bedrooms": ""
+},
+{
+  "type": "apartment",
+  "place": "670B New Castle Ct",
+  "price": "$1,050",
+  "bedrooms": ""
+},
+{
+  "type": "apartment",
+  "place": "101D Edinburgh Ln",
+  "price": "$1,200",
+  "bedrooms": ""
+},
+{
+  "type": "apartment",
+  "place": "Lakewood Plaza One",
+  "price": "$1,025",
+  "bedrooms": "1"
+}]
