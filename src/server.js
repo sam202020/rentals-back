@@ -13,7 +13,7 @@ const deployeduri = process.env.DEPLOYED_URI;
 const localuri = process.env.LOCAL_URI;
 
 const whitelist = [deployeduri, localuri];
-const corsOptionsDelegate = function (req, callback) {
+const corsOptionsDelegate = function(req, callback) {
   let corsOptions;
   if (whitelist.indexOf(req.header("Origin")) !== -1) {
     corsOptions = {
@@ -42,12 +42,12 @@ server.use(express.json());
 server.use(cors());
 
 server.use("/user", userRouter); // router for handling auth related requests, such as login and register
-server.use('/chat', chatRouter);
+server.use("/chat", chatRouter);
 
 // express error handling:
-server.use(function (err, req, res, next) {
+server.use(function(err, req, res, next) {
   if (res.headersSent) {
-    return next(err)
+    return next(err);
   }
   res.status(500).json(err);
 });
@@ -61,24 +61,20 @@ mongoose.set("useCreateIndex", true);
 mongoose.set("useFindAndModify", false); //see https://mongoosejs.com/docs/deprecations.html
 
 // connecting to the database
-mongoose.connect(
-  process.env.MONGO_URI,
-  databaseOptions
-);
-mongoose.connection.on("error", err => console.warn(err));
+mongoose.connect(process.env.MONGO_URI, databaseOptions);
+mongoose.connection.on("error", err => {
+  console.log("databas error");
+  console.warn(err);
+});
 
 // test route
 server.get("/", (req, res) => res.send(`The server is up and running!`));
 
 // posts payment to stripe api
 server.post("/payment", async (req, res, next) => {
-  const {
-    token
-  } = req.body;
+  const { token } = req.body;
   try {
-    let {
-      status
-    } = await stripe.charges.create({
+    let { status } = await stripe.charges.create({
       amount: 1500,
       currency: "usd",
       description: "New Listing",
@@ -94,11 +90,8 @@ server.post("/payment", async (req, res, next) => {
 });
 
 // create subscription without charging card:
-const subscription = async function (req, res, next) {
-  const {
-    token,
-    email
-  } = req.body;
+const subscription = async function(req, res, next) {
+  const { token, email } = req.body;
 
   // Create a Customer:
   const customer = await stripe.customers.create({
@@ -142,9 +135,7 @@ server.get("/rentals", (req, res, next) => {
 
 // returns lat and long of passed in location.
 server.post("/geometry", (req, res, next) => {
-  const {
-    location
-  } = req.body;
+  const { location } = req.body;
   if (!req.body || !location) {
     res.status(404);
     return;
@@ -189,9 +180,10 @@ server.get("/:id", verifyUser, (req, res, next) => {
   Rental.findById(req.params.id)
     .then(result => {
       if (req.uid === result.user) res.status(200).json(result);
-      else res.status(404).json({
-        err: 'unauthorized'
-      });
+      else
+        res.status(404).json({
+          err: "unauthorized"
+        });
     })
     .catch(err => res.status(404).json(err.message));
 });
@@ -200,13 +192,13 @@ server.put("/:id", verifyUser, (req, res, next) => {
   Rental.findByIdAndUpdate(req.params.id, req.body)
     .then(result => {
       if (req.uid === result.user) res.status(200).json(result);
-      else res.status(404).json({
-        err: 'unauthorized'
-      });
+      else
+        res.status(404).json({
+          err: "unauthorized"
+        });
     })
     .catch(err => res.status(404).json(err.message));
 });
-
 
 // adds rental to db, with lat and long data for rental location via google maps api
 server.post("/", verifyUser, (req, res, next) => {
@@ -269,15 +261,19 @@ server.post("/", verifyUser, (req, res, next) => {
     })
     .then(newRental => {
       rentalToReturn = newRental;
-      return User.findOneAndUpdate({
-        user
-      }, {
-        $push: {
-          listings: newRental._id
+      return User.findOneAndUpdate(
+        {
+          user
+        },
+        {
+          $push: {
+            listings: newRental._id
+          }
+        },
+        {
+          new: true
         }
-      }, {
-        new: true
-      });
+      );
     })
     .then(newUser => {
       res.status(201).json({

@@ -1,26 +1,32 @@
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
 const UserModel = mongoose.Schema({
-    _id: {
+  _id: {
+    type: String
+  },
+  displayName: {
+    type: String
+  },
+  email: {
+    type: String
+  },
+  createOn: {
+    type: Date,
+    default: Date.now()
+  },
+  messages: [
+    {
+      user: {
         type: String
-    },
-    displayName: {
+      },
+      toOrFrom: {
         type: String
-    },
-    email: {
+      },
+      message: {
         type: String
-    },
-    createOn: {
-        type: Date,
-        default: Date.now()
-    },
-    messages: {
-        children: [mongoose.Schema({
-            type: Object,
-            toOrFrom: 'to' || 'from',
-            message: String
-        })]
+      }
     }
+  ]
 });
 
-module.exports = mongoose.model('users', UserModel);
+module.exports = mongoose.model("users", UserModel);
