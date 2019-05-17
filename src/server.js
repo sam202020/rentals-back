@@ -3,7 +3,6 @@ const mongoose = require("mongoose");
 const compression = require("compression");
 const helmet = require("helmet");
 const cors = require("cors");
-const stripe = require("stripe")(process.env.STRIPE_KEY_SECRET);
 
 const userRouter = require("./userRouter");
 const chatRouter = require("./chatRouter");
