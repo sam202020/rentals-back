@@ -1,14 +1,65 @@
+/**
+ * @swagger
+ *
+ * /rental/rentals:
+ *   get:
+ *     tags: 
+ *       - rentals
+ *     description: Get all rentals sorted by newest added
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: username
+ *         description: Username to use for login.
+ *         in: formData
+ *         required: true
+ *         type: string
+ *       - name: password
+ *         description: User's password.
+ *         in: formData
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: rental information
+ */
+
 const express = require("express");
 require('dotenv').load();
-const UserModel = require("./models/User");
-const RentalModel = require("./models/Rental");
-const verifyUser = require("./verifyUser");
+const UserModel = require("../models/User");
+const RentalModel = require("../models/Rental");
+const verifyUser = require("../verifyUser");
 
 const router = express.Router();
 
-// returns all rentals in db
+
+/**
+ * @swagger
+ *
+ * /rental/rentals:
+ *   get:
+ *     tags: 
+ *       - rentals
+ *     description: Get all rentals sorted by newest added
+ *     produces:
+ *       - application/json
+ *     parameters:
+ *       - name: username
+ *         description: Username to use for login.
+ *         in: formData
+ *         required: true
+ *         type: string
+ *       - name: password
+ *         description: User's password.
+ *         in: formData
+ *         required: true
+ *         type: string
+ *     responses:
+ *       200:
+ *         description: rental information
+ */
+
 router.get("/rentals", (req, res, next) => {
-    console.log('hit')
     RentalModel.find({})
       .sort({
         price: 1,
@@ -16,7 +67,7 @@ router.get("/rentals", (req, res, next) => {
       })
       .then(response => {
         console.log(response);
-        res.json(response);
+        res.status(200).json(response);
       })
       .catch(err => {
         console.error(err);
