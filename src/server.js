@@ -8,8 +8,6 @@ const rentalRouter = require("./rentalRouter");
 const userRouter = require("./userRouter");
 const chatRouter = require("./chatRouter");
 
-const verifyUser = require("./verifyUser");
-
 const deployeduri = process.env.DEPLOYED_URI;
 const localuri = process.env.LOCAL_URI;
 
@@ -25,14 +23,6 @@ const corsOptionsDelegate = function(req, callback) {
     callback(new Error("Not allowed by CORS"));
   }
 };
-
-const Rental = require("./models/Rental");
-const User = require("./models/User");
-
-const googleMapsClient = require("@google/maps").createClient({
-  key: process.env.GOOGLE_MAPS_GEOLOCATER_API_KEY,
-  Promise: Promise
-});
 
 // setting up the server
 const port = process.env.PORT || 3001;
