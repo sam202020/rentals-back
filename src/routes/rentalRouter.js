@@ -195,7 +195,7 @@ router.put("/:id", verifyUser, (req, res, next) => {
 /**
  * @swagger
  *
- * /rental
+ * /rental:
  *   post:
  *     tags:
  *       - rentals
