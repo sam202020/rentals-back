@@ -7,6 +7,9 @@
     "dev": "nodemon src/server.js",
     "start": "node src/server.js"
   },
+  "engines": {
+    "node": "11.13.0"
+  },
   "dependencies": {
     "@google/maps": "^0.5.5",
     "axios": "^0.18.1",
