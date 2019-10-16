@@ -347,7 +347,7 @@ router.post("/", verifyUser, (req, res, next) => {
     })
     .then(newUser => {
       res.status(201).json({
-        listing: rentalToReturn,
+        listing: rentalToReturn, // test comment
         newUser
       });
     })
