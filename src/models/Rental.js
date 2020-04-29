@@ -35,6 +35,7 @@ const RentalModel = mongoose.Schema({
   pictures: {
     type: Array
   },
+  
   createOn: {
     type: Date,
     default: Date.now()
