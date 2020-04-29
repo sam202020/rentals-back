@@ -38,6 +38,7 @@ const RentalModel = mongoose.Schema({
   createOn: {
     type: Date,
     default: Date.now()
+    
   },
   hud: {
     type: Boolean
